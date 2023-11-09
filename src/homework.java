@@ -23,6 +23,13 @@ class ZooKeeper {
 }
 public class homework {
     public static void main(String[] args){
-        System.out.println("Hello Layla-focalors");
+//        System.out.println("Hello Layla-focalors");
+        ZooKeeper zooKeeper = new ZooKeeper();
+
+        Tiger tiger = new Tiger();
+        Lion lion = new Lion();
+
+        zooKeeper.feed(tiger);  // feed apple!
+        zooKeeper.feed(lion);   // feed banana!
     }
 }
