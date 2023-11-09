@@ -1,14 +1,32 @@
+interface AnimalI {
+    public abstract String getFeedString();
+}
 class Animal {
     String name;
+    String feed_name;
+    Animal(String name, String feed_name){
+        this.name = name;
+        this.feed_name = feed_name;
+    }
     void setName(String name){
         this.name = name;
     }
 }
-class Tiger extends Animal {
-
+class Tiger extends Animal implements AnimalI{
+    Tiger(String name, String feed_name){
+        super(name, feed_name);
+    }
+    public String getFeedString(){
+        return this.feed_name;
+    }
 }
-class Lion extends Animal {
-
+class Lion extends Animal implements AnimalI{
+    Lion(String name, String feed_name){
+        super(name, feed_name);
+    }
+    public String getFeedString(){
+        return this.feed_name;
+    }
 }
 
 class ZooKeeper {
@@ -23,13 +41,11 @@ class ZooKeeper {
 }
 public class homework {
     public static void main(String[] args){
-//        System.out.println("Hello Layla-focalors");
         ZooKeeper zooKeeper = new ZooKeeper();
+        Tiger tiger = new Tiger("드렁큰호랭이", "사슴 고기");
+        Lion lion = new Lion("겁쟁이사자", "물고기");
 
-        Tiger tiger = new Tiger();
-        Lion lion = new Lion();
-
-        zooKeeper.feed(tiger);  // feed apple!
-        zooKeeper.feed(lion);   // feed banana!
+        ZooKeeper.feed(tiger);
+        ZooKeeper.feed(lion);
     }
 }
