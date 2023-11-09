@@ -30,11 +30,8 @@ class Lion extends Animal implements AnimalI{
 }
 
 class ZooKeeper {
-    void feed(Tiger tiger){
-        System.out.println("feed apple!");
-    }
-    void feed(Lion lion){
-        System.out.println("feed banana!");
+    void feed(AnimalI ai){
+        System.out.println("feed "+ai.getFeedString()+"!!!");
     }
 //    문제점 : 악어, 사슴, 토끼, 곰, 다람쥐, 말 등의 동물들이 늘어나면 그때마다
 //    feed 메서드로 추가되는 동물에 맞게 오버로딩 시켜야 함
@@ -45,7 +42,7 @@ public class homework {
         Tiger tiger = new Tiger("드렁큰호랭이", "사슴 고기");
         Lion lion = new Lion("겁쟁이사자", "물고기");
 
-        ZooKeeper.feed(tiger);
-        ZooKeeper.feed(lion);
+        zooKeeper.feed(tiger);
+        zooKeeper.feed(lion);
     }
 }
